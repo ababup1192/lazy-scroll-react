@@ -5,12 +5,14 @@ function First({ props }) {
   const { setIsRenderFirst } = props;
 
   useEffect(() => {
-    setTimeout(() => {
+    const f = async () => {
+      await sleep(1000);
       setValue(2000);
       // 描画フラグ
       setIsRenderFirst(true);
       console.log("render");
-    }, 1000);
+    }
+    f();
   }, [setIsRenderFirst]);
 
 
@@ -22,5 +24,11 @@ function First({ props }) {
       : <p>Container now loading...</p>
   );
 }
+
+const sleep = (time) => new Promise(resolve => {
+  setTimeout(() => {
+    resolve()
+  }, time);
+})
 
 export default First;
