@@ -15,10 +15,11 @@ function First({ props }) {
 
 
   return (
-    value > 0 &&
-    <div style={{ width: `${value}px`, height: `${value}px`, border: "solid" }}>
-      Lazy Load Container
-    </div>
+    value > 0 ?
+      <div style={{ width: `${value}px`, height: `${value}px`, border: "solid" }}>
+        Lazy Load Container
+      </div>
+      : <p>Container now loading...</p>
   );
 }
 

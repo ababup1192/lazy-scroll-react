@@ -9,7 +9,7 @@ function Second({ props }) {
     if (ref.current) {
       ref.current.scrollIntoView({
         behavior: 'smooth',
-        block: 'end',
+        block: 'start',
       })
     }
   }, [ref]);
@@ -23,7 +23,7 @@ function Second({ props }) {
 
 
   return (
-    <div ref={ref} style={{ width: `300px`, height: `300px`, border: "solid" }}>
+    <div ref={ref} style={{ width: `300px`, height: `300px`, marginBottom: "1000px", border: "solid" }}>
       Scroll Me!
     </div>
   );
